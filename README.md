@@ -18,6 +18,6 @@ ros2 run unitree_sdk2_bridge unitree_sdk2_bridge_node
 
 # TODO
 - [x] LowState
-- [] LowCmd
-- [] SportModeState
-- [] WirelessController
+- [ ] LowCmd
+- [ ] SportModeState
+- [ ] WirelessController
