@@ -115,6 +115,8 @@ unitree_go::msg::LowCmd LowCmdToRos(unitree_go::msg::dds_::LowCmd_ lowcmd_dds){
 
 unitree_go::msg::SportModeState SportModeStateToRos(unitree_go::msg::dds_::SportModeState_ sportmodestate_dds){
     unitree_go::msg::SportModeState sportmodestate_ros;
+    sportmodestate_ros.set__position(sportmodestate_dds.position());
+    sportmodestate_ros.set__velocity(sportmodestate_dds.velocity());
     return sportmodestate_ros;
 }
 
@@ -238,11 +240,13 @@ int main(int argc, const char **argv)
 {
     if (argc < 2)
     {
-        ChannelFactory::Instance()->Init(1, "lo");
+        ChannelFactory::Instance()->Init(0, "lo");
+        std::cout << "[UnitreeSdk2BridgeNode] Initialized on interface: lo" << std::endl;
     }
     else
     {
         ChannelFactory::Instance()->Init(0, argv[1]);
+        std::cout << "[UnitreeSdk2BridgeNode] Initialized on interface: " << argv[1] << std::endl;
     }
     std::cout << "[UnitreeSdk2BridgeNode] Topic Forwarding.";
 
