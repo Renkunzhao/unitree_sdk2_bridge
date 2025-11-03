@@ -117,6 +117,9 @@ unitree_go::msg::SportModeState SportModeStateToRos(unitree_go::msg::dds_::Sport
     unitree_go::msg::SportModeState sportmodestate_ros;
     sportmodestate_ros.set__position(sportmodestate_dds.position());
     sportmodestate_ros.set__velocity(sportmodestate_dds.velocity());
+    sportmodestate_ros.set__foot_position_body(sportmodestate_dds.foot_position_body());
+    sportmodestate_ros.set__foot_speed_body(sportmodestate_dds.foot_speed_body());
+
     return sportmodestate_ros;
 }
 
